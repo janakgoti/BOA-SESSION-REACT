@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // demo of var vs let & const 
+
+
+        // Scope of Js there are two type of scope 
+        // global // local by var
+
+        //  function testLet(x){
+        //      let y;
+
+        //      if(x===1){
+
+        //         let d=10;
+        //          y=2
+        //          console.log("Output of d-->" +d);
+        //         // console.log("output of y-->" +y);
+        //}
+
+        //console.log("Output of d-->" +d);
+        // console.log("output of y-->" +y);
+
+        //}
+
+        //testLet(1);
+        //console.log("output of Y-->" +y);
+
+        //Spread Opration
+
+        // (function () {
+
+
+        //     function log(...prarms) {
+        //         console.log(prarms[0]);
+        //         console.log(prarms);
+        //     }
+
+        //     log(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        // })();
+        // Destructuring 
+
+        // (function(){
+        //     console.log('Destructuring');
+
+        //     let movies = ['The Matrix', 'start war', 'don'];
+
+
+        //     let[arg1,arg2,arg3] = movies;
+
+        //     console.log(arg1);
+        //     console.log(arg2);
+        //     console.log(arg3);
+
+        // })();
+
+
+        (function () {
+            // JSON Part
+
+            //structure of JSON Object
+            let movies = {
+                title: 'The Matrixs',
+                year: '1999',
+                genre: 'action',
+                cast: [
+
+                    { name: 'Keanu Reeves', role: 'Neo' },
+                    { name: 'Laurences Fishburne', role: 'Morpheus' },
+                    { name: 'Carrie-Anne Moss', role: 'Trinity' },
+                ]
+            };
+
+            // DeStructuring of JSON Object
+
+
+            let { title, year, genre: g, cast: [{ role: mainRole }] } = movies;
+
+
+            console.log(title);
+            console.log(year);
+            console.log(g);
+            console.log(mainRole);
+
+            // iterate all the role here 
+
+            for (let { role: mainRole } of movies.cast) {
+
+                console.log('Role' + mainRole);
+            }
+
+        })();
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

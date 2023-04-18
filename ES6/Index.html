@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // ES 6 Code here 
+
+        // define the Class here in ES 6 
+
+        class Person {
+
+            #test;
+
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                this.#test = 100;
+                console.log("Person is inint ub ES 6-->");
+                console.log("Name of the Person-->" + this.name);
+                console.log("Age of the Person-->" + this.age);
+
+            }
+
+            // private method declaration with defination 
+
+            #stuffProivateImpl() {
+
+                console.log("calling the private one here -->");
+                return this.#test;
+            }
+
+            // create the public method here 
+
+
+            getConcatValue() {
+
+                console.log("call the public method here-->");
+
+                return this.conCat();
+            }
+
+
+            conCat() {
+
+                return this.name + "with the age-->" + this.age;
+            }
+
+
+            // previledge here 
+
+            perMethod() {
+
+                console.log("call the previledge one here -->");
+                return this.#stuffProivateImpl();
+            }
+
+
+            // ovveride the parent one 
+
+            testOvveride() {
+
+                console.log("access the parent one here -->");
+                return "i am the parent one -->";
+            }
+
+
+            // static  impl 
+
+            static myStatic() {
+
+
+                return "i am the Static Impl here";
+            }
+
+
+        }
+
+
+        // class definination is over here 
+
+        // prototype based impl heree 
+
+
+        Person.prototype.test1 = 200;
+        Person.prototype.sayHello = function () {
+
+            console.log("prototype implementation here -->");
+
+            return this.test1;
+        }
+
+        // here define the one more class Student :- 
+
+
+        class Student extends Person {
+
+
+            testOvveride() {
+
+                console.log(super.testOvveride());
+
+                console.log("access theChild one here -->");
+                return "i am the child one -->";
+            }
+
+
+            testChilsMethod() {
+
+
+                return "this is the child one -->";
+            }
+
+
+
+        }
+
+        //let p=new Person("BOA Session" ,5);
+
+        let s = new Student("BOA Session", 5)
+        // call the public method here 
+
+        console.log("call the public method here-->" + s.getConcatValue());
+        console.log("calling the previledge one outside the class-->" + s.perMethod());
+
+        console.log("call the prototype extension here -->" + s.sayHello());
+
+        // acess the static here 
+
+        console.log("call the static method here -->" + Person.myStatic());
+
+
+        // student method 
+
+        console.log("calling the student one here-->" + s.testChilsMethod());
+
+        // ovveride 
+        console.log("<------------ovveridde---------------->");
+        console.log(s.testOvveride());
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class BasicCalc {
+            constructor(num1, num2) {
+                this.num1 = num1;
+                this.num2 = num2;
+            }
+            add = () => "Adding is " + parseInt(this.num1) + parseInt(this.num2);
+            sub = () => "Substraction is " + parseInt(this.num1) - parseInt(this.num2);
+
+        }
+
+        class Scicalc extends BasicCalc {
+            constructor(num1, num2) {
+                super(num1, num2);
+                this.num1 = num1;
+            }
+            sin = () => "sin of number " + Math.sin(this.num1);
+            cos = () => "cos of numner " + Math.cos(this.num2);
+        }
+
+        let objectofSciCal = new Scicalc(5, 2);
+        console.log(objectofSciCal.add());
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
